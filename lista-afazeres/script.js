@@ -22,21 +22,20 @@ function criarCampos(tarefa){
      window.confirm('Tem certeza que deseja excluir?');
     if(confirmacao){
        li.remove()
+       salvarLista()
     }})
     var ul = document.querySelector('#listaUl');
     ul.appendChild(li);
 
  salvarLista()
-
 }
 
 document.querySelector('#btn').addEventListener('click', function (){
-    criarCampos(document.getElementById('novoItem').value)
-
     if(document.getElementById('novoItem').value.trim() == ''){
         alert('Campo vazio, favor inserir um texto!');
         return
     }
+    criarCampos(document.getElementById('novoItem').value)
     document.getElementById('novoItem').value = null; 
 });
 
